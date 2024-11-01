@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Logo />
+  <Loading v-if="isLoading" />
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Logo from './components/WebLogo.vue'
+import Loading from './components/MyLoading.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Logo,
+    Loading
+  },
+   data() {
+    return {
+      isLoading: false,
+    };
+  },
+  mounted() {
+    this.$router.beforeEach((to, from, next) => {
+      window.scrollTo(0, 0);
+      next(); // 延迟2秒后跳转
+      this.isLoading = true; // 开始加载
+      setTimeout(() => {
+        this.isLoading = false; // 完成加载
+      }, 2000);
+    });
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
@@ -15,3 +16,55 @@
     <!-- built files will be auto injected -->
   </body>
 </html>
+
+<style scoped>
+  #app {
+    /* div的CSS样式 */
+    max-width: 100vw;
+    overflow: hidden;
+    font-family: 思源黑体 CN Normal;
+    letter-spacing: 1.2px;
+  }
+
+  * {
+    /* CSS Reset */
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    position: relative;
+    text-decoration: none;
+  }
+
+  a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    bottom: -5px;
+    left: 0;
+    background-color: #5D5D5D;
+    transform: scaleX(1);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+  }
+
+  @keyframes underlineAnimation {
+    0% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  a:hover::before {
+    animation: underlineAnimation 1s forwards;
+  }
+
+</style>

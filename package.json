@@ -8,8 +8,18 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@better-scroll/core": "^2.5.1",
+    "@better-scroll/infinity": "^2.5.1",
+    "@better-scroll/mouse-wheel": "^2.5.1",
+    "animate.css": "^4.1.1",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "element-plus": "^2.8.6",
+    "lodash": "^4.17.21",
+    "stylus-loader": "^8.1.1",
+    "vue": "^3.2.13",
+    "vue-animate-onscroll": "^1.0.8",
+    "vue-router": "^4.4.5",
+    "vue3-animate-onscroll": "^1.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
